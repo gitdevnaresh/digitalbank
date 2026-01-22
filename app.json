@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "Rapidz Money",
+    "slug": "RapidzMoney",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "scheme": "rapidz",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "money.rapidz.rapidzmoney.staging",
+      "associatedDomains": ["applinks:tst.rapidz.money"]
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "money.rapidz.rapidzmoney.staging",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [{ "scheme": "rapidz" }],
+          "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "tst.rapidz.money"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-asset",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff",
+          "image": "./assets/splash-icon.png"
+        }
+      ],
+      "react-native-edge-to-edge",
+      "expo-build-properties",
+      "expo-font",
+      "expo-localization",
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "rapidzmoney",
+          "organization": "guru-6o"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d336f78b-f860-4f6e-9e7d-6e9f40ed5e27"
+      }
+    }
+  }
+}
